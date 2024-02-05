@@ -31,7 +31,7 @@ void main() {
 
   double gno = 3.48;
 
-  bool mezunMu = true;
+  bool mezunMu = false;
   bool erkekMi = true;
   print("Mezun mu değeri: $mezunMu");
   // bool cinsiyet = false;
