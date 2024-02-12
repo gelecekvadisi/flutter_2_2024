@@ -42,6 +42,6 @@ void main() {
   sayi += 3; */
 
   int index = 6;
-  print("index: ${++index}");
+  print("index: ${index++}");
   print("index: ${index}");
 }

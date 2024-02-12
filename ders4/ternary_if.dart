@@ -34,7 +34,7 @@ void main() {
     kucukSayi = sayi2;
   } */
 
-  /* (sayi1 < sayi2) ? kucukSayi = sayi1 : kucukSayi = sayi2; */
+  (sayi1 < sayi2) ? kucukSayi = sayi1 : kucukSayi = sayi2;
 
   kucukSayi = (sayi1 < sayi2) ? sayi1 : sayi2;
 
@@ -49,4 +49,10 @@ void main() {
   } else {
     print("Ana sayfaya yönlendiriliyor.");
   }
+
+  String? cepTelNo = null;
+  String? evTelNo = null;
+  String? isTelNo = null;
+
+  String aranacakTelNo = cepTelNo ?? evTelNo ?? isTelNo ?? "Telefon numarası bulunamadı";
 }
