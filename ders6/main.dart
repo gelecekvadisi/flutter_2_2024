@@ -41,4 +41,6 @@ int alanHesapla(int en, int boy) {
 //  fat arrow (=>)
 int hacimHesapla(int en, int boy, int yukseklik) => en * boy * yukseklik;
 
+void hacimYazdir(int en, int boy, int yukseklik) => print(en * boy * yukseklik);
+
 int maxOlaniBul(int sayi1, int sayi2) => (sayi1 > sayi2) ? sayi1 : sayi2;
