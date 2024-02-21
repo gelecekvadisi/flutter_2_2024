@@ -3,7 +3,7 @@
 /// 2) Değişken uzunluklu listeler
 
 void main(List<String> args) {
-  List<int> sayilar = List.filled(5, 0);
+List<int> sayilar = List.filled(5, 0, growable: false);  //  [0, 0, 0, 0, 0]
   print(sayilar);
 
   sayilar[2] = 7;
