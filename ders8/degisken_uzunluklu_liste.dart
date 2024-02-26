@@ -35,6 +35,7 @@ void main() {
 
   List<String> isimler2 = ["Furkan", "Veli"];
   isimler.addAll(isimler2);
+  // isimler.addAll(["Furkan", "Veli"]);
   print(isimler);
 
   bool haveAli = isimler.contains("Emir");

@@ -1,3 +1,7 @@
+/// Set yapısının List'den farkları:
+/// 1) Veri tekrarı olmaz. Veri tekrarına müsaade etmez.
+/// 2) Veriler sırasız olarak tutulur.
+
 void main(List<String> args) {
   Set<String> isimler = Set();
   Set<String> isimler2 = Set.from(["Fatma", "Emir"]);
@@ -17,6 +21,6 @@ void main(List<String> args) {
   print("**********************");
   for (String element in isimler) {
     print(element);
-  }
+  } 
   print("**********************");
 }
