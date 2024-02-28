@@ -8,11 +8,13 @@ void main(List<String> args) {
 }
 
 class Ogrenci {
+  //  field
   String? adSoyad;
   int? yas;
   int? sinifi;
   double? gno;
   bool? mezunMu;
 
+  //  method
   void ortalamaHesapla(){}
 }

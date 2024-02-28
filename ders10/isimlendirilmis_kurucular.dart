@@ -1,35 +1,5 @@
 void main(List<String> args) {
 
-
-  String adSoyad = "Furkan";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   Araba focus = Araba.sifirAraba(marka: "Ford", model: "Focus", renk: "Beyaz");
   print(focus.sifirArabaMi);
 
