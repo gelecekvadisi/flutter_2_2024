@@ -10,7 +10,14 @@ class Database {
     return _userName;
   }
 
-  String get userName => _userName;
+  String get userName {
+    bool isAdmin = false;
+    if(isAdmin) {
+      return _userName;
+    } else {
+      return "Kullanıcı adına erişiminiz yok.";
+    }
+  }
 
   void setUserName(String newValue) {
     _userName = newValue;
