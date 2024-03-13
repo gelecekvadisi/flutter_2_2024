@@ -40,9 +40,17 @@ void main(List<String> args) {
   isimler.forEach((element) {
     print("Foreach liste elemanı: $element");
   });
+
+  List<String> aHarfiOlanIsimler =
+      isimler.where((element) => element.toLowerCase().contains("a")).toList();
+  print("İçinde \"a\" harfi olan isimler: $aHarfiOlanIsimler");
+
+  List<String> selamlamaMetinleri =
+      isimler.map((element) => "Merhaba $element").toList();
+      print(selamlamaMetinleri);
   //  where
   //  any
-  //  map      
+  //  map
   //  containsWhere
   //  foreach
 }
