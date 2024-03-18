@@ -1,5 +1,5 @@
 void main(List<String> args) {
-  /* try {
+  try {
     int sayi = 5 ~/ 0;
     print("Merhaba");
     print(sayi);
@@ -7,7 +7,7 @@ void main(List<String> args) {
     print("HATA: $exception");
   } finally {
     print("Try - Catch tamamlandı!");
-  } */
+  }
 
   // IntegerDivisionByZeroException();
   // UnsupportedError("asdas");

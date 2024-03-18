@@ -1,3 +1,5 @@
+import '../ders11/inharitence.dart';
+
 void main(List<String> args) {
   MyStack<int> sayilar = MyStack();
   sayilar.push(10);
