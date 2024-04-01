@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/home_page.dart';
 
+import 'my_widget.dart';
+
 void main(List<String> args) {
   runApp(const MyApp());
 }
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        body: HomePage(),
+        body: MyWidget(),
       ),
     );
   }
