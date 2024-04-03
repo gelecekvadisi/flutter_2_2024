@@ -1,3 +1,4 @@
+import 'package:counter_app/image_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: HomePage(),
+      home: ImagePage(),
     );
   }
 }
