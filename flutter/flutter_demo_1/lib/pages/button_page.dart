@@ -7,7 +7,7 @@ class ButtonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Button Page"),
+        title: const Text("Button Page"),
       ),
       body: Center(
         child: Column(
@@ -20,12 +20,12 @@ class ButtonPage extends StatelessWidget {
               onPressed: () {
                 debugPrint("Text Butona Tıklandı!");
               },
-              child: Text("TextButton"),
+              child: const Text("TextButton"),
             ),
             TextButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.heart_broken),
-              label: Text("TextButton.icon"),
+              icon: const Icon(Icons.heart_broken),
+              label: const Text("TextButton.icon"),
             ),
             ElevatedButton(
               style: ButtonStyle(
@@ -37,7 +37,7 @@ class ButtonPage extends StatelessWidget {
                 }),
               ),
               onPressed: () {},
-              child: Text("ElevatedButton"),
+              child: const Text("ElevatedButton"),
             ),
             ElevatedButton.icon(
               onLongPress: () {
@@ -48,34 +48,35 @@ class ButtonPage extends StatelessWidget {
                 // shape: RoundedRectangleBorder(
                 //   borderRadius: BorderRadius.circular(5),
                 // ),
-                shape: StadiumBorder(),
+                shape: const StadiumBorder(),
                 shadowColor: Colors.green,
               ),
               onPressed: () {
                 debugPrint("Butona tıklandı");
               },
-              icon: Icon(Icons.add_a_photo),
-              label: Text("ElevatedButton.icon"),
+              icon: const Icon(Icons.add_a_photo),
+              label: const Text("ElevatedButton.icon"),
             ),
             OutlinedButton(
               style: OutlinedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.red,
                   width: 10,
                 )
               ),
               onPressed: () {},
-              child: Text("OutlinedButton"),
+              child: const Text("OutlinedButton"),
             ),
             OutlinedButton.icon(
               onPressed: () {},
-              icon: Icon(Icons.now_wallpaper),
-              label: Text("OutlinedButton.icon"),
+              onLongPress: () {},
+              icon: const Icon(Icons.now_wallpaper),
+              label: const Text("OutlinedButton.icon"),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.heart_broken),
+              icon: const Icon(Icons.heart_broken),
             ),
           ],
         ),

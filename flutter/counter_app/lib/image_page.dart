@@ -75,7 +75,7 @@ class ImagePage extends StatelessWidget {
               ),
             ),
           ),
-          Flexible(
+          const Flexible(
             child: CircleAvatar(
               radius: 100,
               backgroundImage: AssetImage("assets/images/car.jpeg"),

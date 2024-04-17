@@ -10,6 +10,7 @@ class CardPage extends StatelessWidget {
         title: Text("Card ve ListTile Kullanımı"),
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
             _buildCard(),
@@ -67,20 +68,29 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _buildCard() {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.amber,
-        child: Text("F"),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+        side: const BorderSide(
+          color: Colors.red,
+          width: 2,
+        )
       ),
-      title: Text("Furkan Yağmur"),
-      subtitle: Text("0542 345 5223"),
-      trailing: IconButton(
-        icon: Icon(Icons.call),
-        onPressed: () {},
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: Colors.amber,
+          child: Text("F"),
+        ),
+        title: Text("Furkan Yağmur"),
+        subtitle: Text("0542 345 5223"),
+        trailing: IconButton(
+          icon: Icon(Icons.call),
+          onPressed: () {},
+        ),
+        onTap: () {
+          debugPrint("Kişi aranıyor....");
+        },
       ),
-      onTap: () {
-        debugPrint("Kişi aranıyor....");
-      },
     );
   }
 }
