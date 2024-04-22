@@ -17,6 +17,36 @@ class ListViewPage extends StatelessWidget {
     UserModel(name: "Furkan Dolu", phone: "+905342834322"),
     UserModel(name: "Osman Dolu", phone: "+905342834322"),
     UserModel(name: "Kerem Dolu", phone: "+905342834322"),
+    UserModel(name: "Furkan Yağmur", phone: "+905342834322"),
+    UserModel(name: "Osman Yağmur", phone: "+905342834322"),
+    UserModel(name: "Kerem Yağmur", phone: "+905342834322"),
+    UserModel(name: "Furkan Kar", phone: "+905342834322"),
+    UserModel(name: "Osman Kar", phone: "+905342834322"),
+    UserModel(name: "Kerem Kar", phone: "+905342834322"),
+    UserModel(name: "Kerem Yağmur", phone: "+905342834322"),
+    UserModel(name: "Furkan Dolu", phone: "+905342834322"),
+    UserModel(name: "Osman Dolu", phone: "+905342834322"),
+    UserModel(name: "Kerem Dolu", phone: "+905342834322"),
+    UserModel(name: "Furkan Yağmur", phone: "+905342834322"),
+    UserModel(name: "Osman Yağmur", phone: "+905342834322"),
+    UserModel(name: "Kerem Yağmur", phone: "+905342834322"),
+    UserModel(name: "Furkan Kar", phone: "+905342834322"),
+    UserModel(name: "Osman Kar", phone: "+905342834322"),
+    UserModel(name: "Kerem Kar", phone: "+905342834322"),
+    UserModel(name: "Kerem Yağmur", phone: "+905342834322"),
+    UserModel(name: "Furkan Dolu", phone: "+905342834322"),
+    UserModel(name: "Osman Dolu", phone: "+905342834322"),
+    UserModel(name: "Kerem Dolu", phone: "+905342834322"),
+    UserModel(name: "Furkan Yağmur", phone: "+905342834322"),
+    UserModel(name: "Osman Yağmur", phone: "+905342834322"),
+    UserModel(name: "Kerem Yağmur", phone: "+905342834322"),
+    UserModel(name: "Furkan Kar", phone: "+905342834322"),
+    UserModel(name: "Osman Kar", phone: "+905342834322"),
+    UserModel(name: "Kerem Kar", phone: "+905342834322"),
+    UserModel(name: "Kerem Yağmur", phone: "+905342834322"),
+    UserModel(name: "Furkan Dolu", phone: "+905342834322"),
+    UserModel(name: "Osman Dolu", phone: "+905342834322"),
+    UserModel(name: "Kerem Dolu", phone: "+905342834322"),
   ];
 
   @override
@@ -25,51 +55,110 @@ class ListViewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("ListView Kullanımları"),
       ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            ListView.separated(
+      body: _listViewBuilderKullanimi(),
+    );
+  }
+
+  ListView _listViewBuilderKullanimi() {
+    return ListView.separated(
+      // shrinkWrap: true,
+      physics: PageScrollPhysics(),
+      // physics: RangeMaintainingScrollPhysics(),
+      itemCount: userList.length,
+      itemBuilder: (context, index) {
+        UserModel user = userList[index];
+        return _buildItem(
+          name: user.name,
+          phone: user.phone,
+          index: index,
+          context: context,
+        );
+      },
+      separatorBuilder: (context, index) {
+        /* return Divider(
+          indent: 32,
+          endIndent: 32,
+        ); */
+          
+        /* return Container(
+          width: 200,
+          height: 50,
+          color: Colors.amber,
+        ); */
+          
+        if ((index + 1) % 3 == 0) {
+          return Container(
+            height: 200,
+            child: Center(
+              child: Text("Gelecek Vadisi"),
+            ),
+          );
+          // return Container(height: 100, color: Colors.green,);
+        } else {
+          return Container();
+        }
+      },
+    );
+  }
+
+  Widget _buildShrinkWrapDemo() {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Text("Sayfa başlığı"),
+          Container(
+            color: Colors.red,
+            padding: EdgeInsets.all(8),
+            child: ListView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: userList.length,
-              itemBuilder: (context, index) {
-                return _buildItem(
-                  name: userList[index].name,
-                  phone: userList[index].phone,
-                  index: index,
-                  context: context,
-                );
-              },
-              separatorBuilder: (context, index) {
-                /* return Divider(
-                  indent: 32,
-                  endIndent: 32,
-                ); */
-            
-                /* return Container(
-                  width: 200,
-                  height: 50,
-                  color: Colors.amber,
-                ); */
-            
-                if ((index + 1) % 3 == 0) {
-                  return Container(
-                    height: 200,
-                    child: Center(
-                      child: Text("Gelecek Vadisi"),
-                    ),
-                  );
-                  // return Container(height: 100, color: Colors.green,);
-                } else {
-                  return Container();
-                }
-              },
+              children: [
+                Container(color: Colors.blue, height: 100, width: double.infinity,),
+                Container(color: Colors.orange, height: 100, width: double.infinity,),
+                Container(color: Colors.purple, height: 100, width: double.infinity,),
+                Container(color: Colors.blue, height: 100, width: double.infinity,),
+                Container(color: Colors.orange, height: 100, width: double.infinity,),
+                Container(color: Colors.purple, height: 100, width: double.infinity,),
+                Container(color: Colors.blue, height: 100, width: double.infinity,),
+                Container(color: Colors.orange, height: 100, width: double.infinity,),
+                Container(color: Colors.purple, height: 100, width: double.infinity,),
+                Container(color: Colors.blue, height: 100, width: double.infinity,),
+                Container(color: Colors.orange, height: 100, width: double.infinity,),
+                Container(color: Colors.purple, height: 100, width: double.infinity,),
+              ],
             ),
-            ElevatedButton(onPressed: (){}, child: Text("Tamam")),
-          ],
-        ),
+          ),
+          ElevatedButton(onPressed: (){}, child: Text("Tamam"),),
+        ],
       ),
+    );
+  }
+
+  Widget _buildListView(BuildContext context) {
+    return ListView(
+      scrollDirection: Axis.horizontal,
+      reverse: true,
+      children: [
+        Text(""),
+        _buildItem(
+          name: "Furkan Yağmur",
+          phone: "+905342834322",
+          index: 0,
+          context: context,
+        ),
+        _buildItem(
+          name: "Furkan Yağmur",
+          phone: "+905342834322",
+          index: 0,
+          context: context,
+        ),
+        _buildItem(
+          name: "Furkan Yağmur",
+          phone: "+905342834322",
+          index: 0,
+          context: context,
+        ),
+      ],
     );
   }
 
@@ -93,8 +182,8 @@ class ListViewPage extends StatelessWidget {
         onPressed: () {},
       ),
       onTap: () {
-
-        String content = """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique vulputate mi nec semper. Sed ac arcu velit. In tincidunt massa lorem, sed placerat enim finibus nec. Cras sed lorem eros. Praesent at pharetra leo. Quisque sit amet fermentum erat, ac eleifend libero. Etiam eget nisl ac justo pellentesque facilisis. Quisque vitae erat nunc. Aliquam pharetra augue mauris. Morbi a metus molestie, porttitor elit sed, cursus mi. Nam eu porta ante.
+        String content =
+            """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique vulputate mi nec semper. Sed ac arcu velit. In tincidunt massa lorem, sed placerat enim finibus nec. Cras sed lorem eros. Praesent at pharetra leo. Quisque sit amet fermentum erat, ac eleifend libero. Etiam eget nisl ac justo pellentesque facilisis. Quisque vitae erat nunc. Aliquam pharetra augue mauris. Morbi a metus molestie, porttitor elit sed, cursus mi. Nam eu porta ante.
 
 Fusce in diam interdum, maximus lectus quis, faucibus eros. Pellentesque sed cursus ipsum. Etiam rhoncus, purus sit amet molestie convallis, mi dui gravida mi, vitae mollis lorem orci sit amet nisl. Aenean accumsan posuere enim, ut ullamcorper lectus lacinia ac. Aliquam non tellus et lacus suscipit semper. Nulla nisl justo, tristique eget ornare id, elementum in dolor. In posuere, nulla lobortis consectetur pellentesque, purus arcu pulvinar lacus, at tempus metus nulla vitae odio. Nullam et vulputate elit, vel mollis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur vel quam nulla. Fusce ac sapien ac lacus posuere volutpat. Praesent eget sem eu est hendrerit fringilla eget eu tortor. Proin porttitor sodales purus et eleifend. Aenean nisl velit, tempor a tellus vel, egestas interdum mi. Curabitur malesuada tempor ex non commodo.
 
@@ -112,31 +201,37 @@ Pellentesque aliquet, justo volutpat imperdiet maximus, tortor elit porta eros, 
                 content: SingleChildScrollView(
                   child: Text(content),
                 ),
+                icon: Icon(Icons.call),
                 actions: [
                   TextButton(onPressed: () {}, child: Text("İptal")),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.purple,
-                        foregroundColor: const Color.fromARGB(255, 196, 180, 180),
+                        foregroundColor:
+                            const Color.fromARGB(255, 196, 180, 180),
                       ),
                       onPressed: () {},
                       child: Text("Ara")),
                 ],
-                icon: Icon(Icons.call),
               );
             });
       },
       onLongPress: () {
-        EasyLoading.instance.toastPosition = EasyLoadingToastPosition.bottom;
-        /* 
-        EasyLoading.instance
-          ..toastPosition = EasyLoadingToastPosition.bottom
-          ..backgroundColor = Colors.red
-          ..fontSize = 24;
-         */
-        EasyLoading.showToast("Kişi Aranıyor...");
+        _showToastMessage();
+        // _showSnackbar(context);
       },
     );
+  }
+
+  void _showToastMessage() {
+    EasyLoading.instance.toastPosition = EasyLoadingToastPosition.bottom;
+    /* 
+    EasyLoading.instance
+      ..toastPosition = EasyLoadingToastPosition.bottom
+      ..backgroundColor = Colors.red
+      ..fontSize = 24;
+     */
+    EasyLoading.showToast("Kişi Aranıyor...");
   }
 
   _showSnackbar(BuildContext context) {
