@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class GridViewPage extends StatelessWidget {
@@ -11,15 +13,7 @@ class GridViewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("GirdView Kullanımları"),
       ),
-      body: GridView.builder(
-        itemCount: Colors.primaries.length * 9,
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 9),
-        itemBuilder: (context, index) {
-          // Colors.primaries[]
-          return Container(color: Colors.red,);
-        },
-      ),
+      body: _buildGridViewBuilder(),
     );
   }
 
@@ -30,6 +24,7 @@ class GridViewPage extends StatelessWidget {
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       itemBuilder: (context, index) {
         return Container(
+          color: Colors.primaries[Random().nextInt(10)],
           child: Text("${index + 1}"),
         );
       },
@@ -55,7 +50,7 @@ class GridViewPage extends StatelessWidget {
       ),
       // SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
 
-      // scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.horizontal,
 
       children: [
         Container(color: Colors.red),

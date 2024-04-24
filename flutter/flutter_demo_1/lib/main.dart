@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_1/pages/button_page.dart';
 import 'package:flutter_demo_1/pages/card_page.dart';
+import 'package:flutter_demo_1/pages/color_palette_page.dart';
 import 'package:flutter_demo_1/pages/custom_button_page.dart';
+import 'package:flutter_demo_1/pages/custom_scroll_page.dart';
 import 'package:flutter_demo_1/pages/grid_view_page.dart';
 import 'package:flutter_demo_1/pages/list_view_page.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark, */
       title: 'Material App',
-      home: GridViewPage(),
+      home: CustomScrollPage(),
       builder: EasyLoading.init(),
     );
   }
