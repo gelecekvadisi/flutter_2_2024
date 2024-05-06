@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'blue_page.dart';
+
 class RedPage extends StatelessWidget {
   const RedPage({super.key});
 
@@ -24,11 +26,26 @@ class RedPage extends StatelessWidget {
               onPressed: () {
 
                 double tutar = 300;
-
+                // Navigator.of(context).pop(tutar);
                 Navigator.pop(context, tutar);
               },
               child: Text("Geri Dön"),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BluePage(),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text("Mavi Sayfa"),
+            )
           ],
         ),
       ),

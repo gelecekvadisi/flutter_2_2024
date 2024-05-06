@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigator_demo/page/green_page.dart';
 import 'package:navigator_demo/page/home_page.dart';
 
 class BluePage extends StatelessWidget {
@@ -8,8 +9,13 @@ class BluePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
-        await showDialog(
+      // canPop: true,
+      onPopInvoked: (popFonksiyonuMu) async {
+        if (popFonksiyonuMu) {
+          debugPrint("Pop fonksiyonu tetiklendi.");
+        } else {
+          debugPrint("MaybePop fonksiyonu tetiklendi.");
+          showDialog(
             context: context,
             builder: (dialogContext) {
               return AlertDialog(
@@ -23,20 +29,16 @@ class BluePage extends StatelessWidget {
                       child: Text("İptal")),
                   ElevatedButton(
                       onPressed: () {
-                        // WidgetsBinding.instance
-                        //     .addPostFrameCallback((timeStamp) {
-                          Navigator.of(context).pop();
-                        // });
-                        WidgetsBinding.instance
-                            .addPostFrameCallback((timeStamp) {
-                          Navigator.of(context).pop();
-                        });
+                        Navigator.pop(context);
+                        Navigator.pop(context);
                       },
                       child: Text("Çıkış")),
                 ],
               );
             });
-            // Navigator.of(context).pop();
+        }
+        /*  */
+        // Navigator.of(context).pop();
       },
       child: Scaffold(
         appBar: AppBar(
@@ -55,9 +57,26 @@ class BluePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.maybePop(context);
+                  Navigator.pop(context);
                 },
                 child: Text("Geri Dön"),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return GreenPage();
+                      },
+                    ),
+                  );
+                },
+                child: Text("Yeşil Sayfaya Git"),
               ),
             ],
           ),
