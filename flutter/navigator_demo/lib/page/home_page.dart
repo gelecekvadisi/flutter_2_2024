@@ -20,7 +20,6 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () async {
-
                 /* Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                     return RedPage();
                   })); */
@@ -33,7 +32,14 @@ class HomePage extends StatelessWidget {
                 );
                 debugPrint("Ödenen tutar: $odenenTutar"); */
 
-                Navigator.pushNamed(context, "/redPage");
+                Navigator.pushNamed(context, "/redPage", arguments: 345);
+                /* Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RedPage(),
+                    settings: RouteSettings(arguments: 100),
+                  ),
+                ); */
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
@@ -46,7 +52,7 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   CupertinoPageRoute(builder: (context) {
-                    return RedPage();
+                    return RedPage(price: 1000,);
                   }),
                 );
               },
@@ -73,12 +79,12 @@ class HomePage extends StatelessWidget {
               child: const Text("Mavi Sayfa"),
             ),
             ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  foregroundColor: Colors.white,
-                ),
-                onPressed: () {
-                  /* Navigator.push(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+              ),
+              onPressed: () {
+                /* Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
@@ -86,20 +92,20 @@ class HomePage extends StatelessWidget {
                       },
                     ),
                   ); */
-                  Navigator.pushNamed(context, "/greenPage");
-                },
-                child: Text("Yeşil Sayfaya Git"),
+                Navigator.pushNamed(context, "/greenPage");
+              },
+              child: Text("Yeşil Sayfaya Git"),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  foregroundColor: Colors.white,
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, "/blackPage");
-                },
-                child: Text("Siyah Sayfaya Git"),
-              ),
+              onPressed: () {
+                Navigator.pushNamed(context, "/blackPage");
+              },
+              child: Text("Siyah Sayfaya Git"),
+            ),
           ],
         ),
       ),

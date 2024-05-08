@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'blue_page.dart';
 
 class RedPage extends StatelessWidget {
-  const RedPage({super.key});
+  RedPage({super.key, this.price});
+
+  int? price;
 
   @override
   Widget build(BuildContext context) {
+    // price = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       appBar: AppBar(
         title: Text("Kırmızı Sayfa"),
@@ -18,6 +21,7 @@ class RedPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Text("$price"),
             Text(
               "Kırmızı Sayfa",
               style: TextStyle(color: Colors.red),
