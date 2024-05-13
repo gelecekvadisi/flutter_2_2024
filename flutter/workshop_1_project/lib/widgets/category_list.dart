@@ -29,7 +29,7 @@ class _CategoryListState extends State<CategoryList> {
   Widget build(BuildContext context) {
     debugPrint("Category List Build");
     return SizedBox(
-      height: 60,
+      height: 40,
       child: ListView.separated(
         padding: EdgeInsets.symmetric(horizontal: Constants.defaultPadding),
         scrollDirection: Axis.horizontal,
@@ -57,6 +57,7 @@ class _CategoryListState extends State<CategoryList> {
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             categoriList[index],
@@ -64,7 +65,7 @@ class _CategoryListState extends State<CategoryList> {
               fontWeight: FontWeight.bold,
               color: isSelected
                   ? Constants.textColor
-                  : Constants.textColor.withOpacity(0.5),
+                  : Constants.textHintColor,
             ),
           ),
           Visibility(
