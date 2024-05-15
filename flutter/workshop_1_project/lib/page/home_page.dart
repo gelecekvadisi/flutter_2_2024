@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     debugPrint("Home Page Build");
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: MyAppBar(context: context,),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
