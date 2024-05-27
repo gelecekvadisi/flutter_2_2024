@@ -61,7 +61,10 @@ class _HomePageState extends State<HomePage> {
                     focusNode: emailFocus,
                     autofocus: true,
                     controller: emailController,
-                    keyboardType: TextInputType.multiline,
+                    keyboardType: TextInputType.emailAddress,
+                    autofillHints: [
+                      AutofillHints.email,
+                    ],
                     decoration: const InputDecoration(
                       labelText: "E-Posta",
                     ),
