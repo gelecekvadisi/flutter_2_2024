@@ -19,6 +19,8 @@ class _FormInputsPageState extends State<FormInputsPage> {
 
   double volumeLevel = 0;
 
+  String? secilenSehir;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,6 +110,36 @@ class _FormInputsPageState extends State<FormInputsPage> {
               },
             ),
             Text("Ses Düzeyi: $volumeLevel"),
+            Divider(),
+            DropdownButton<String>(
+              value: secilenSehir,
+              underline: Container(height: 2, color: Colors.red,),
+              icon: Icon(Icons.arrow_drop_down),
+              dropdownColor: Colors.red,
+              isExpanded: true,
+              padding: EdgeInsets.all(16),
+              menuMaxHeight: 100,
+              items: const [
+                DropdownMenuItem(
+                  value: "İstanbul",
+                  child: Text("İstanbul"),
+                ),
+                DropdownMenuItem(
+                  value: "Ankara",
+                  child: Text("Ankara"),
+                ),
+                DropdownMenuItem(
+                  value: "Bursa",
+                  child: Text("Bursa"),
+                ),
+              ],
+              onChanged: (value) {
+                setState(() {
+                  secilenSehir = value;
+                  debugPrint("Seçilen Değer: $value");
+                });
+              },
+            )
           ],
         ),
       ),
