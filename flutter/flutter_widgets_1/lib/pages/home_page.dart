@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage>
           title: const Text("Ana Sayfa"),
           bottom: TabBar(
             controller: tabController,
-            onTap: (index){
+            onTap: (index) {
               _pageController.jumpToPage(index);
             },
             tabs: const [
@@ -82,7 +82,6 @@ class _HomePageState extends State<HomePage>
           onPressed: () {},
           child: const Icon(Icons.add),
         ),
-        // body: pageList[selectedPageIndex],
         body: PageView(
           controller: _pageController,
           onPageChanged: (index) {
